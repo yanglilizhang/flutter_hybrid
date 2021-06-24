@@ -12,3 +12,6 @@ evaluate(new File(                                                      // new
 //可选,主要作用是可以在当前AS的Project下显示flutter_module以方便查看和编写Dart代码
 include ':flutter_module'
 project(':flutter_module').projectDir = new File('../flutter_module')
+
+//如果Binding爆红 可以先把上面flutter相关的代码和implementation project(':flutter')注释掉
+//然后执行Sync,编译成功之后再放开。可以事先先把flutter_module工程打开 跑下

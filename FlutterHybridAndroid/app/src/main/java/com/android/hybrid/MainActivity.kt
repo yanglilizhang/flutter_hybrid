@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         //Flutter嵌套Android(View)
         tv_demo2.setOnClickListener {
             val intent = Intent(this, MyFlutterActivity::class.java)
-            intent.putExtra("moduleName","nativeView")
+            intent.putExtra("moduleName", "nativeView")
             startActivity(intent)
         }
     }
