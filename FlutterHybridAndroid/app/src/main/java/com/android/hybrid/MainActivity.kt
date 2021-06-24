@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * Author: 信仰年轻
  * Date: 2021-06-11 10:10
  * Email: hydznsqk@163.com
- * Des:第四次提交
+ * Des:执行git revert 回退到这个版本,解决了冲突，这条是新加的信息
  */
 class MainActivity : AppCompatActivity() {
 
