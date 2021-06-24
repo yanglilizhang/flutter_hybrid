@@ -27,7 +27,7 @@ class _NativePageState extends State<NativePage> {
         children: [
           Text("Flutter嵌入Native组件-显示Native组件"),
           SizedBox(
-              height: 520,
+              height: 300,
               child: FImageView(
                 url:url1,
                 onViewCreated: _onViewCreated,
