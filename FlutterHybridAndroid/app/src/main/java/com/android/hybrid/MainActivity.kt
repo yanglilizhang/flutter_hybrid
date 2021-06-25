@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * 我是第五次提交-在第七次基础上执行回滚git revert 然后解决了bug和冲突，再提交一次作为第八次
  * 我是第六次提交
  * 我是第七次提交
+ * 我是第九次提交
  */
 class MainActivity : AppCompatActivity() {
 
