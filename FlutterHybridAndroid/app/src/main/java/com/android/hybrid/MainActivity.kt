@@ -19,8 +19,12 @@ import kotlinx.android.synthetic.main.activity_main.*
  * 我是第五次提交-在第七次基础上执行回滚git revert 然后解决了bug和冲突，再提交一次作为第八次
  * 我是第六次提交
  * 我是第七次提交
- * 我是第九次提交
+ * 我是第九次提交-在第10次基础上执行回滚git revert 回到这里改一些东西
+ * 再执行git reset --hard origin/master(这个操作相当于啥也没干又回到第10次提交上面)，这次我准备执行
+ * git reset origin/master 看这次的备注东西还在不在（已确定东西还在！）
  * 我是第十次提交
+ * 我是第十一次提交
+ *
  */
 class MainActivity : AppCompatActivity() {
 
