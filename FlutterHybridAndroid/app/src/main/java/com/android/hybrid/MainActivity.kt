@@ -25,7 +25,8 @@ import kotlinx.android.synthetic.main.activity_main.*
  * 我是第十次提交
  * 我是第十一次提交
  * 我是第十二次提交
- * 我是第13次提交
+ * 我是第13次提交-在第14提交基础上执行git reset --hard id 回到这里修改代码后执行git push -f -u origin master
+ * 我是第14次提交
  */
 class MainActivity : AppCompatActivity() {
 
