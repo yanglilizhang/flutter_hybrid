@@ -11,7 +11,7 @@ import com.android.hybrid.util.IStatusBar
  * Author: 信仰年轻
  * Date: 2021-06-11 14:42
  * Email: hydznsqk@163.com
- * Des:
+ * Des: TODO 原生页面作为容器展示flutter页面！
  */
 class MyFlutterActivity : AppCompatActivity() {
 
@@ -27,13 +27,13 @@ class MyFlutterActivity : AppCompatActivity() {
     }
 
     private fun initFragment() {
-        moduleName=intent.getStringExtra("moduleName")
+        moduleName = intent.getStringExtra("moduleName")
         flutterFragment = MFlutterFragment(moduleName!!)
         supportFragmentManager.beginTransaction().add(R.id.root_view, flutterFragment!!)
             .commit()
     }
 
-    class MFlutterFragment(private var moduleName:String) : FlutterFragment(moduleName){
+    class MFlutterFragment(private var moduleName: String) : FlutterFragment(moduleName) {
 
         override fun onDestroy() {
             super.onDestroy()

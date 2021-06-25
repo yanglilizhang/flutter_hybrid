@@ -24,7 +24,6 @@ class RecommendFragment : FlutterFragment(FlutterCacheManager.MODULE_NAME_RECOMM
 
 
         title.setOnClickListener {
-
             FlutterBridge.instance!!.fire(
                 "onRefreshRecommend",
                 "我是推荐的参数",

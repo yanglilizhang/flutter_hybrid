@@ -22,7 +22,7 @@ import io.flutter.plugin.common.MethodChannel
  */
 class FlutterBridge : MethodChannel.MethodCallHandler, IFlutterBridge<Any?, MethodChannel.Result> {
 
-    //因多FlutterEngine后每个FlutterEngine需要单独注册一个MethodChannel，所以用集合将所有的MethodChannel保存起来
+    //TODO 因多FlutterEngine后每个FlutterEngine需要单独注册一个MethodChannel，所以用集合将所有的MethodChannel保存起来
     private var methodChannels = mutableListOf<MethodChannel>()
 
     //单例
@@ -40,7 +40,7 @@ class FlutterBridge : MethodChannel.MethodCallHandler, IFlutterBridge<Any?, Meth
                 }
             }
             methodChannel.setMethodCallHandler(instance)
-            //因为支持多Flutter引擎,多FlutterEngine后每个FlutterEngine需要单独注册一个MethodChannel，所以用集合将所有的MethodChannel保存起来
+            //TODO 因为支持多Flutter引擎,多FlutterEngine后每个FlutterEngine需要单独注册一个MethodChannel，所以用集合将所有的MethodChannel保存起来
             instance!!.apply {
                 methodChannels.add(methodChannel)
             }
@@ -92,6 +92,7 @@ class FlutterBridge : MethodChannel.MethodCallHandler, IFlutterBridge<Any?, Meth
 
     /**
      * 去Android页面或者传递数据到Android这边
+     * //TODO 收flutter页面动作和参数
      */
     override fun goToNative(p: Any?) {
         if (p is Map<*, *>) {

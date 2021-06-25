@@ -37,7 +37,8 @@ class FlutterBridge {
     }
   }
 
-///////以下方法为Flutter调用Android/////////////////////////////////////////////////
+///////以下方法为Flutter调用Android /////////////////////////////////////////////////
+
   ///去Android页面或者传递数据到Android这边
   void goToNative(Map params) {
     _bridge.invokeMethod("goToNative", params);

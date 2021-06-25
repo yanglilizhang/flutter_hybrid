@@ -22,7 +22,7 @@ class _FavoritePageState extends State<FavoritePage> {
   ///注册事件,登录成功后会发射事件到这里
   void _registerEvent() {
     var bridge = FlutterBridge.getInstance();
-    //监听onRefresh消息,登录的时候和点击当前页面标题的时候会发射到这里,然后请求数据进行刷新
+    //TODO 监听onRefresh消息,登录的时候和点击当前页面标题的时候会发射到这里,然后请求数据进行刷新
     bridge.register("onRefreshFavorite", (MethodCall call) {
       setState(() {
         arguments = call.arguments;

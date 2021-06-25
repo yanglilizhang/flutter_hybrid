@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_flutter.*
  * Author: 信仰年轻
  * Date: 2021-06-11 14:32
  * Email: hydznsqk@163.com
- * Des:
+ * Des:承载flutter页面的fragment容器
  */
 abstract class FlutterFragment(moduleName: String) : BaseFragment() {
 
@@ -37,7 +37,7 @@ abstract class FlutterFragment(moduleName: String) : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // 注册flutter/platform_views 插件以便能够处理native view
+        //TODO 注册flutter/platform_views 插件以便能够处理native view
         if(!cached){
             flutterEngine?.platformViewsController?.attach(activity,flutterEngine.renderer,flutterEngine.dartExecutor)
         }

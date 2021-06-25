@@ -30,6 +30,7 @@ class FlutterCacheManager private constructor() {
 
         //喜欢页面,默认是flutter启动的主入口
         const val MODULE_NAME_FAVORITE = "main"
+
         //推荐页面
         const val MODULE_NAME_RECOMMEND = "recommend"
 
@@ -49,7 +50,7 @@ class FlutterCacheManager private constructor() {
     /**
      * 空闲时候预加载Flutter
      */
-    fun preLoad(context: Context){
+    fun preLoad(context: Context) {
         //在线程空闲时执行预加载任务
         Looper.myQueue().addIdleHandler {
             initFlutterEngine(context, MODULE_NAME_FAVORITE)
@@ -58,7 +59,7 @@ class FlutterCacheManager private constructor() {
         }
     }
 
-    fun hastCached(moduleName: String):Boolean{
+    fun hastCached(moduleName: String): Boolean {
         return FlutterEngineCache.getInstance().contains(moduleName)
     }
 
@@ -69,9 +70,9 @@ class FlutterCacheManager private constructor() {
 
         val flutterLoader: FlutterLoader = FlutterInjector.instance().flutterLoader()
 
-        //flutter 引擎
-        val flutterEngine = FlutterEngine(context,flutterLoader, FlutterJNI())
-        //插件注册要紧跟引擎初始化之后，否则会有在dart中调用插件因为还未初始化完成而导致的时序问题
+        //TODO flutter 引擎
+        val flutterEngine = FlutterEngine(context, flutterLoader, FlutterJNI())
+        //TODO 插件注册要紧跟引擎初始化之后，否则会有在dart中调用插件因为还未初始化完成而导致的时序问题
         FlutterBridge.init(flutterEngine)
         FImageViewPlugin.registerWith(flutterEngine)
         flutterEngine.dartExecutor.executeDartEntrypoint(
@@ -80,18 +81,18 @@ class FlutterCacheManager private constructor() {
                 moduleName
             )
         )
-        //存到引擎缓存中
-        FlutterEngineCache.getInstance().put(moduleName,flutterEngine)
+        //TODO 存到引擎缓存中
+        FlutterEngineCache.getInstance().put(moduleName, flutterEngine)
         return flutterEngine
     }
 
     /**
      * 获取缓存的flutterEngine
      */
-    fun getCachedFlutterEngine(context: Context?, moduleName: String):FlutterEngine{
+    fun getCachedFlutterEngine(context: Context?, moduleName: String): FlutterEngine {
         var flutterEngine = FlutterEngineCache.getInstance()[moduleName]
-        if(flutterEngine==null && context!=null){
-            flutterEngine=initFlutterEngine(context,moduleName)
+        if (flutterEngine == null && context != null) {
+            flutterEngine = initFlutterEngine(context, moduleName)
         }
         return flutterEngine!!
     }
@@ -99,16 +100,16 @@ class FlutterCacheManager private constructor() {
     /**
      * 销毁FlutterEngine
      */
-    fun destroyCached(moduleName: String){
+    fun destroyCached(moduleName: String) {
         try {
             val map = FlutterEngineCache.getInstance()
-            if(map.contains(moduleName)){
+            if (map.contains(moduleName)) {
                 map[moduleName]?.apply {
                     destroy()
                 }
                 map.remove(moduleName)
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
 
         }
 
