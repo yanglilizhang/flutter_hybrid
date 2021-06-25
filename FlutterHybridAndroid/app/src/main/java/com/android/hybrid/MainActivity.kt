@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
  * Des:执行git revert 回退到这个版本,解决了冲突，这条是新加的信息
  * 我是第五次提交
  * 我是第六次提交
+ * 我是第七次提交
  */
 class MainActivity : AppCompatActivity() {
 
